@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Description</title>
+  <link rel="stylesheet" href="FB.css"> 
+</head>
+<body>
+<div class="feedback-box">
+  <h2>Thank you for your feedback!</h2>
+  <p>Your rating: <strong id="rating"></strong></p>
+  <p>Your feedback:</p>
+  <p id="feedback"></p>
+</div>
+
+<script>
+  var rating = localStorage.getItem("rating");
+  var feedback = localStorage.getItem("feedback");
+  document.getElementById("rating").textContent = rating + " stars";
+  document.getElementById("feedback").textContent = feedback;
+</script>
+
+</body>
+</html>
