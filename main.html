@@ -27,7 +27,7 @@
               list-style: none;
               padding: 0;
               margin: 0;
-              margin-bottom: 100px;
+              margin-bottom: 20px;
             }
     
             nav ul li {
@@ -86,28 +86,9 @@
               background-color: #45a049;
             }
     
-            .owner-info {
-              display: flex;
-              align-items: center;
-            }
+            
     
-            .owner-image {
-              margin-right: 20px;
-            }
-    
-            .owner-image img {
-              max-width: 200px;
-              max-height: 200px;
-              border-radius: 50%;
-            }
-    
-            .owner-details {
-              flex-grow: 1;
-            }
-    
-            .owner-details p {
-              margin: 5px 0;
-            }
+          
     
             body {
               font-family: Arial, sans-serif;
@@ -190,7 +171,7 @@
       text-align: center;
     }
     .mySlides img{
-      width: 900px;
+      width: 100%;
       max-width: 100%;
       height: 500px;
       max-height: 500px;
@@ -220,8 +201,7 @@
       max-width: 800px; 
     }
     
-    
-    .delivered-meals {
+    .delivered-fuels {
           justify-content: center;
           margin-top: 3.2rem;
         display: flex;
@@ -255,10 +235,19 @@
         font-weight: 700;
       }
      li :hover{
-        background-color: skyblue;
-        border: 2px solid skyblue;
+        background-color: lightgray;
+        border: 2px solid lightgray;
         border-radius: 5px;
      }
+     @media (max-width:800px) {
+    nav{
+        padding: 14px 0;
+    }
+    .container{
+        
+        width: 95%;
+    }
+}
     
           </style>
        
@@ -274,7 +263,7 @@
                 <li><a href="#fuel-types" style="font-family: sans-serif;color: black;"><b>Fuel Types</b></a></li>
                 <li><a href="#product" style="font-family: sans-serif;color: black;"><b>Product</b></a></li>
                 <li><a href="#Your-cart" style="font-family: sans-serif;color: black;"><b>Your Cart</b></a></li>
-                <li><a href="#owner-details" style="font-family: sans-serif;color: black;"><b>Profile</b></a></li>
+    
                 <li><a href="#contact-support" style="font-family: sans-serif;color: black;"><b>Contact Support</b></a></li>
                 
               </ul>
@@ -294,20 +283,20 @@
               </svg> Welcome to NEELADRI'S Online Fuel Delivery!
             </h2>
             <p>Order fuel conveniently from your home.</p>
-            <p style="text-align: center; color: orange; font-size: large; border: 2px solid black; border-radius: 100px; background-color: #333;"> 24 Hours Available!!!</p>
+            <p style="text-align: center; color: orange; font-size: large; border: 2px solid black; border-radius: 100px; background-color: #333;font-family: serif;"> 24 Hours Available!!!</p>
             <div class="slideshow-container">
               <div class="mySlides fade">
-                <img class="class="aimg"" src="Home/d8.avif" style="width:100%">
+                <img class="aimg" src="Home/d8.avif" style="width:100%">
               </div>
           
               <div class="mySlides fade">
                 <img class="aimg" src="Home/d9.avif" style="width:100%">
               </div>
               <div class="mySlides fade">
-                <img class="class="aimg"" src="Home/d10.jpg" style="width:100%">
+                <img class="aimg"" src="Home/d10.jpg" style="width:100%">
               </div>
               <div class="mySlides fade">
-                <img class="class="aimg"" src="Home/ppt1.jpg" style="width:100%">
+                <img class="aimg"" src="Home/ppt1.jpg" style="width:100%">
               </div>
               <div class="mySlides fade">
                 <img class="aimg" src="Home/ppt2.webp" style="width:100%">
@@ -329,13 +318,8 @@
               <div class="mySlides fade">
                 <img class="aimg" src="Home/ppt4.jpg" style="width:100%">
               </div>
-          
-    
-          
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <div class="delivered-meals">
+            <div class="delivered-fuels">
               <div class="delivered-imgs">
                 <img src="Home/customer20.jpg" alt="Customer photo" />
                 <img src="Home/customer-16.jpg" alt="Customer photo" />
@@ -839,20 +823,6 @@
               <h2>Your Cart</h2>
               <div id="cart" class="cart-items"></div>
             </section>
-            <section id="owner-details" class="container" style="background-color: lightgray;">
-              <h2>Profile</h2>
-              <div class="owner-info">
-                <div class="owner-image">
-                  <img src="images/yogi2.jpeg" alt="Owner Image">
-                </div>
-                <div class="owner-details">
-                  <p><strong>Founder:</strong>YOGENDRA NEELADRI</p>
-                  <p><strong>Company Name:</strong> NEELADRI'S Fuel Services</p>
-                  <p><strong>Mobile No:</strong>+91 8897012345
-                  <p><strong>Company-Address:</strong> 123 Main Street,Pedda Padu,Srikakulam,Andhra Pradesh-532401,INDIA</p>
-                </div>
-              </div>
-            </section>
             <section id="contact-support" style="background-color: aliceblue;">
                       <h1>For Students</h1>
                       <h2 class="heading-secondary" style="font-family: Georgia, 'Times New Roman', Times, serif;">Get your first order for free!</h2>
@@ -963,7 +933,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15151.636905703892!2d83.91561359714072!3d18.3057589239431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3c3fe2d47a07d7%3A0x3a226e42f0209d34!2sPedapadu%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1713082166060!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               <div class="picture-container" style="background-color: aliceblue;">
-                <h2>Business Partners</h2>
+                <h2>Sponsored By</h2>
                 <div class="picture-grid">
                   <img src="Company/b1.png" alt="Picture 1">
                   <img src="Company/b2.jpg" alt="Picture 2">
