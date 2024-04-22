@@ -6,64 +6,76 @@
     <title>Login</title>
     <style>
         body {
-          font-family: Arial, sans-serif;
-          background-color: #f2f2f2;
-          margin: 0;
-          padding: 0;
-          background-image: url("light.jpg");
-          background-size: cover;
-         
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            background-image: url("light.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;   
         }
-        .size{
-          width: 500px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 60vh; 
-         margin-left: 30%;
+
+        .size {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0 20px;
         }
+
         .container {
-          max-width: 2000px;
-          padding: 20px;
-          background-color: #fff;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-    
-        h1,
-        h2 {
-          color: black;
+
+        h1 {
+            color: chocolate;
+            font-family: cursive;
+            text-align: center;
         }
-    
-        input[type="text"],
-        input[type="password"],
-        input[type="number"],
-        select {
-          width: 100%;
-          padding: 10px;
-          margin: 10px 0;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-        }
-    
+
+        label,
+        input,
         button {
-          background-color: #4caf50;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+            padding: 10px;
+            /* border: 1px solid #ccc; */
         }
-    
+
+        button {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
         button:hover {
-          background-color: #45a049;
+            background-color: skyblue;
         }
-    
+
         .error-message {
-          color: red;
-          margin-top: 10px;
+            color: red;
+            margin-top: 10px;
+            text-align: center;
         }
-    
+
+        p {
+            color: #fff;
+            font-family: cursive;
+            text-align: center;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
         #loginPage {
           background-image: url("back5.jpg");
           background-size: cover;
@@ -73,70 +85,85 @@
           background-image: url("back5.jpg");
           background-size: cover;
         }
-      </style>
-    </head>
-    
-    <body>
-      <div class="size">
+        
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            label,
+            input,
+            button {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="size">
       <section id="loginPage" class="container">
         <h1 style="color: chocolate; font-family: cursive;">Login</h1>
         <form id="loginForm">
-          <label style="color: chocolate; font-family: cursive;" for="username">UserName :</label>
+          <label style="color: black; font-family: serif;" for="username">UserName :</label>
           <input type="text" id="username" name="username" required>
-          <label style="color: chocolate; font-family: cursive;" for="password">Password :</label>
+          <label style="color: black; font-family: serif;" for="password">Password :</label>
           <input type="password" id="password" name="password" required>
           <button type="submit" style="font-family: cursive;">Login</button>
         </form>
         <div id="loginError" class="error-message"></div>
         <p style="color: #fff; font-family: cursive;" >Don't have an account? <a href="#" id="signupLink" style="color: red;">Sign Up</a></p>
-        <img src="images/benzin-fuel.gif" alt="Lorry Animation" class="loory"
-          style="position: fixed; bottom: 0; left: 0; width: 100%; height: 300px">
       </section>
       <section id="signupPage" class="container" style="display: none;">
         <h1 style="color: chocolate; font-family: cursive;">Sign Up</h1>
         <form id="signupForm">
-          <label for="newUsername" style="color: chocolate; font-family: cursive;">Choose a Username:</label>
+          <label for="newUsername" style="color: black; font-family: serif;">Choose a Username:</label>
           <input type="text" id="newUsername" name="newUsername" required>
-          <label for="newPassword" style="color: chocolate; font-family: cursive;">Choose a Password:</label>
+          <label for="newPassword" style="color: black; font-family: serif;">Choose a Password:</label>
           <input type="password" id="newPassword" name="newPassword" required>
           <button type="submit" style="font-family: cursive;">Sign Up</button>
         </form>
       </div>
       </section>
-    
-      <script>
+    </div>
+
+    <script>
         const loginPage = document.getElementById('loginPage');
         const signupPage = document.getElementById('signupPage');
-      
+
         document.getElementById('loginForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const username = document.getElementById('username').value;
-          const password = document.getElementById('password').value;
-          if (username === localStorage.getItem('username') && password === localStorage.getItem('password')) {
-            window.location.href = "main.html";
-          } else {
-            document.getElementById('loginError').innerText = 'Invalid username or password.';
-          }
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === localStorage.getItem('username') && password === localStorage.getItem('password')) {
+                window.location.href = "main.html";
+            } else {
+                document.getElementById('loginError').innerText = 'Invalid username or password.';
+            }
         });
-      
+
         document.getElementById('signupLink').addEventListener('click', function(event) {
-          event.preventDefault();
-          loginPage.style.display = 'none';
-          signupPage.style.display = 'block';
+            event.preventDefault();
+            loginPage.style.display = 'none';
+            signupPage.style.display = 'block';
         });
-      
+
         document.getElementById('signupForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const newUsername = document.getElementById('newUsername').value;
-          const newPassword = document.getElementById('newPassword').value;
-          localStorage.setItem('username', newUsername);
-          localStorage.setItem('password', newPassword);
-      
-          alert('Sign Up successful! You can now login.');
-          loginPage.style.display = 'block';
-          signupPage.style.display = 'none';
+            event.preventDefault();
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+            localStorage.setItem('username', newUsername);
+            localStorage.setItem('password', newPassword);
+
+            alert('Sign Up successful! You can now login.');
+            loginPage.style.display = 'block';
+            signupPage.style.display = 'none';
         });
-      </script>
-      
+    </script>
 </body>
 </html>
